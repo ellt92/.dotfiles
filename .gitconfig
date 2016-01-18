@@ -1,0 +1,4 @@
+[user]
+	email = elliott@moo.com
+[core]
+	excludesfile = /Users/elliott/.gitignore-global

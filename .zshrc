@@ -1,3 +1,17 @@
+# Aliases #
+alias grep="ggrep"
+alias myserver="ssh root@178.62.1.80"
+alias tmux="TERM=screen-256color-bce tmux"
+
+# Exports #
+export ANDROID_HOME=/usr/local/opt/android-sdk
+export GRADLE_HOME=/usr/local/opt/gradle-2.12
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home
+
+# Paths #
+
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/elliott/.oh-my-zsh
 
@@ -51,9 +65,6 @@ ZSH_THEME="elliott"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(emoji-clock git)
 
-# User configuration
-
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -93,8 +104,3 @@ if [ $? -eq 0 ]; then
 
         PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
-# Aliases #
-alias grep="ggrep"
-alias myserver="ssh root@178.62.1.80"
-
-export JAVA_HOME=/usr

@@ -7,18 +7,28 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+"# Layout and file management
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'morhetz/gruvbox'
-Plugin 'scrooloose/syntastic'
-Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
-Plugin 'honza/vim-snippets'
+Plugin 'airblade/vim-gitgutter'
+"# Styling
+Plugin 'morhetz/gruvbox'
+Plugin 'Yggdroot/indentLine'
+"# Syntax
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'kien/ctrlp.vim'
 Plugin 'Glench/Vim-Jinja2-Syntax'
-Plugin 'chrisbra/Colorizer'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'saltstack/salt-vim'
+Plugin 'gregsexton/MatchTag'
+Plugin 'SirVer/ultisnips'
+Plugin 'elzr/vim-json'
 call vundle#end()
 " Brief help
 " :PluginList       - lists configured plugins
@@ -32,21 +42,30 @@ call vundle#end()
 set laststatus=2
 set noshowmode
 set encoding=utf-8
-set term=xterm-256color
 let g:airline_powerline_fonts = 1
 
-""NERDTree configs ""
+"" Key Mappings
 map <C-n> :NERDTreeToggle<CR>
+map <C-t> :tabn<CR>
+
+""NERDTree configs ""
 let NERDTreeIgnore = ['\.pyc$']
-        
+
 ""Color configs ""
 syntax enable
+set t_Co=256
+set term=screen-256color
 set background=dark
 colorscheme gruvbox
 
 "" Editor configs ""
 set number
 filetype plugin on
+
+"" UltiSnips config ""
+let g:UltiSnipsExpandTrigger="<F1>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 "" Indenting configs ""
 filetype plugin indent on
@@ -56,17 +75,24 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+let g:indentLine_char = '¦'
 
 " toggle invisible characters
 set invlist
 set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
 highlight SpecialKey ctermbg=none 
 
-let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 
 " CSS colour highlighter
 let g:cssColorVimDoNotMessMyUpdatetime = 1
+
+" json formatting
+com! FormatJSON %!python -m json.tool
+
+" concealing
+let g:vim_json_syntax_conceal = 0
 
 " make the highlighting of tabs less
 " annoying

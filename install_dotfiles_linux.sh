@@ -6,4 +6,5 @@ chsh -s `which zsh`
 ln -s .dotfiles/.vimrc .vimrc
 ln -s .dotfiles/.zshrc .zshrc
 ln -s .dotfiles/.eslintrc .eslintrc
-ln -s .dotfiles/elliott.zsh-theme .oh-my-zsh/themes/elliott.zsh-theme
+cd .oh-my-zsh/themes
+ln -s ../../.dotfiles/elliott.zsh-theme elliott.zsh-theme

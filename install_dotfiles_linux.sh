@@ -8,3 +8,4 @@ ln -s .dotfiles/.zshrc .zshrc
 ln -s .dotfiles/.eslintrc .eslintrc
 cd .oh-my-zsh/themes
 ln -s ../../.dotfiles/elliott.zsh-theme elliott.zsh-theme
+curl http://beyondgrep.com/ack-2.14-single-file > ~/bin/ack && chmod 0755 !#:3

@@ -13,7 +13,7 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/elliott/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/

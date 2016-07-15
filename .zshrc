@@ -1,7 +1,8 @@
 # Aliases #
 alias grep="ggrep"
-alias myserver="ssh root@178.62.1.80"
+alias myserver="ssh root@139.59.161.226"
 alias tmux="TERM=screen-256color-bce tmux"
+alias gbd="git branch -D"
 
 # Exports #
 export ANDROID_HOME=/usr/local/opt/android-sdk

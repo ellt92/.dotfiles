@@ -1,0 +1,64 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# https://atom.io/docs/latest/using-atom-basic-customization#cson
+
+'.source.js':
+  'Test React Component':
+    'prefix': 'testcomponent'
+    'body': """
+        import React from 'react';
+        import { shallow } from 'enzyme';
+
+        import Component from './index.jsx';
+
+        describe('given the Component component', () => {
+            describe('when this', () => {
+                const wrapper = shallow(
+                    <Component/>
+                );
+                it('then this', () => {
+                    const EXPECTED_RESULT = 1;
+                    const ACTUAL_RESULT = wrapper.find('');
+                    expect(ACTUAL_RESULT).toEqual(EXPECTED_RESULT);
+                });
+            });
+        });
+    """
+  'React Class Component':
+    'prefix': 'componentclass'
+    'body': """
+        class ${1:Component} extends Component {
+            static propTypes = {
+                var: PropTypes.func.isRequired
+            };
+            render() {
+                return (
+                    <div></div>
+                );
+            }
+        }
+    """
+  'Import React':
+    'prefix': 'importreact'
+    'body': """
+        import React, { PropTypes, Component } from 'react';
+        import _ from 'lodash';
+    """

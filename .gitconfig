@@ -1,5 +1,6 @@
 [user]
 	email = elliott@moo.com
+	name = Elliott Thompson
 [core]
 	excludesfile = ~/.gitignore-global
     editor = vim

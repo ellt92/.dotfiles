@@ -7,16 +7,16 @@
 
 
 ### Install zsh and oh-my-zsh
-`brew install zsh` (Mac)
+Mac - `brew install zsh`
 
-`apt-get install zsh` (Linux)
+Linux - `apt-get install zsh`
 
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 
 ### Install nvm
-`brew install nvm` (Mac)
+Mac - `brew install nvm`
 
-`apt-get install nvm` (Linux)
+Linux - `apt-get install nvm`
 
 `mkdir ~/.nvm`
 
@@ -37,7 +37,7 @@ export NVM_DIR="$HOME/.nvm"
 
 Add the following to ~/.zshrc:
 ```
-ZSH_THEME="materialshell-oceanic" to .zshrc
+ZSH_THEME="materialshell-oceanic"
 ```
 
 ### Vim Setup

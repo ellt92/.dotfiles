@@ -8,7 +8,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 "# Layout and file management
-Plugin 'bling/vim-airline'
+Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
@@ -18,10 +18,11 @@ Plugin 'mileszs/ack.vim'
 "# Styling
 Plugin 'morhetz/gruvbox'
 Plugin 'Yggdroot/indentLine'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'jackiehluo/vim-material'
+Plugin 'jdkanani/vim-material-theme'
+Plugin 'joshdick/onedark.vim'
 "# Syntax
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/syntastic'
-Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Glench/Vim-Jinja2-Syntax'
@@ -30,6 +31,8 @@ Plugin 'saltstack/salt-vim'
 Plugin 'gregsexton/MatchTag'
 Plugin 'SirVer/ultisnips'
 Plugin 'elzr/vim-json'
+"# C Tag Management
+Plugin 'ludovicchabant/vim-gutentags'
 call vundle#end()
 " Brief help
 " :PluginList       - lists configured plugins
@@ -39,28 +42,36 @@ call vundle#end()
 """"""""""""""""""""""""""""""""
 "" Configurations ""
 """"""""""""""""""""""""""""""""
-"" airline configs ""
+"" vim splits ""
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+set splitbelow
+set splitright
+
+"" lightline configs ""
+let g:lightline = {
+  \ 'colorscheme': 'onedark',
+  \ }
 set laststatus=2
-set noshowmode
-set encoding=utf-8
-let g:airline_powerline_fonts = 1
 
 "" Key Mappings
 map <C-n> :NERDTreeToggle<CR>
-map <C-t> :tabn<CR>
 
 ""NERDTree configs ""
 let NERDTreeIgnore = ['\.pyc$']
 
 ""Color configs ""
 syntax enable
-set t_Co=256
-set term=screen-256color
 set background=dark
-colorscheme gruvbox
+colorscheme onedark
+set ambiwidth=double
 
 "" Editor configs ""
 set number
+set relativenumber
 filetype plugin on
 
 "" UltiSnips config ""
@@ -81,7 +92,7 @@ let g:indentLine_char = '¦'
 " toggle invisible characters
 set invlist
 set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
-highlight SpecialKey ctermbg=none 
+highlight SpecialKey ctermbg=none
 
 
 " syntastic
@@ -112,9 +123,6 @@ let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore
 let g:ctrlp_use_caching = 0
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 noremap <leader>b :CtrlPBuffer<CR>
-
-" vim-airline
-let g:airline#extensions#syntastic#enabled = 1
 
 " make the highlighting of tabs less
 " annoying
@@ -282,5 +290,5 @@ function! WatchForChanges(bufname, ...)
   let @"=reg_saved
 endfunction
 
-let autoreadargs={'autoread':1} 
+let autoreadargs={'autoread':1}
 execute WatchForChanges("*",autoreadargs)

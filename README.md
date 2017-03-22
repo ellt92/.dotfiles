@@ -13,6 +13,15 @@ Linux - `apt-get install zsh`
 
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 
+### Setup Git / Clone Dotfiles
+
+Install Git on max / linux
+
+`git clone https//github.com/ellt92/.dotfiles ~/`
+
+`cp ~/.dotfiles/.gitignore-global ~/`
+`cp ~/.dotfiles/.gitconfig ~/`
+
 ### Install nvm
 Mac - `brew install nvm`
 
@@ -42,8 +51,6 @@ ZSH_THEME="materialshell-oceanic"
 
 ### Vim Setup
 `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
-
-`git clone https//github.com/ellt92/.dotfiles ~/`
 
 Inside ~/ run the following:
 

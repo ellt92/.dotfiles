@@ -58,10 +58,12 @@ set expandtab                   " On pressing tab, insert 4 spaces
 let g:indentLine_char = '¦'
 
 """"""""""""""""""
-"" Key Mappings ""
+"" Mappings ""
 """"""""""""""""""
+nnoremap ; :
 "" nerdtree
 map <C-n> :NERDTreeToggle<CR>
+:command NN NerdTreeFind
 "" vim splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>

@@ -63,7 +63,7 @@ let g:indentLine_char = '¦'
 nnoremap ; :
 "" nerdtree
 map <C-n> :NERDTreeToggle<CR>
-:command NN NerdTreeFind
+map NN :NERDTreeFind<CR>
 "" vim splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>

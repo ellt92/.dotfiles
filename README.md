@@ -61,3 +61,6 @@ Inside ~/ run the following:
 Inside vim run:
 
 `:PluginInstall`
+
+### Useful Tools
+[z - jump around](https://github.com/rupa/z/)

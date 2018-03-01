@@ -46,7 +46,7 @@ export NVM_DIR="$HOME/.nvm"
 
 Add the following to ~/.zshrc:
 ```
-ZSH_THEME="materialshell-oceanic"
+ZSH_THEME="materialshell"
 ```
 
 ### Vim Setup

@@ -23,7 +23,7 @@ Plugin 'ludovicchabant/vim-gutentags'
 "# Styling
 Plugin 'Yggdroot/indentLine'
 Plugin 'ayu-theme/ayu-vim'
-Plugin 'ryanoasis/vim-devicons'
+"Plugin 'ryanoasis/vim-devicons'
 call vundle#end()
 " Brief help
 " :PluginList       - lists configured plugins

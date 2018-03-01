@@ -5,24 +5,25 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 "# Layout and file management
-Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'mileszs/ack.vim'
-"# Styling
-Plugin 'Yggdroot/indentLine'
-Plugin 'joshdick/onedark.vim'
+Plugin 'bagrat/vim-workspace'
 "# Syntax
 Plugin 'mxw/vim-jsx'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'gregsexton/MatchTag'
 Plugin 'SirVer/ultisnips'
 Plugin 'elzr/vim-json'
 "# C Tag Management
 Plugin 'ludovicchabant/vim-gutentags'
+"# Styling
+Plugin 'Yggdroot/indentLine'
+Plugin 'ayu-theme/ayu-vim'
+Plugin 'ryanoasis/vim-devicons'
 call vundle#end()
 " Brief help
 " :PluginList       - lists configured plugins
@@ -40,9 +41,14 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 set splitbelow
 set splitright
+
+"" Styling
 syntax enable
-set background=dark
-colorscheme onedark
+set termguicolors     " enable true colors support
+let ayucolor="mirage"  " for light version of theme
+colorscheme ayu
+
+""layout
 set ambiwidth=double
 set number
 set relativenumber
@@ -50,16 +56,26 @@ filetype plugin on
 set invlist                     " toggle invisible characters
 set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
 highlight SpecialKey ctermbg=none
-"" Indenting configs ""
+""" Indenting configs ""
 filetype plugin indent on
 set tabstop=4                   " show existing tab with 4 spaces width
 set shiftwidth=4                " when indenting with '>', use 4 spaces width
 set expandtab                   " On pressing tab, insert 4 spaces
-let g:indentLine_char = '¦'
+" IndentLine {{
+let g:indentLine_char = '⁞'
+let g:indentLine_first_char = '⁞'
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_setColors = 0
+" }}
 
 """"""""""""""""""
 "" Mappings ""
 """"""""""""""""""
+"" esc key map
+inoremap lkj <esc>
+vnoremap lkj <esc>
+"" page up and down remaps
+"" easier command line
 nnoremap ; :
 "" nerdtree
 map <C-n> :NERDTreeToggle<CR>
@@ -70,20 +86,24 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 "" ctrlp
-cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
-noremap <leader>b :CtrlPBuffer<CR>
+cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR> noremap <leader>b :CtrlPBuffer<CR>
 
 """"""""""""""""""""""
 "" Lightline Config ""
 """"""""""""""""""""""
-let g:lightline = {
-  \ 'colorscheme': 'onedark',
-  \ }
-set laststatus=2
+"let g:lightline = {
+"  \ 'colorscheme': 'onedark',
+"  \ }
+"set laststatus=2
+"let g:airline_theme='ayu'
 
 """""""""""""""""""""
 ""NERDTree Configs ""
 """""""""""""""""""""
+let g:NERDTreeDirArrowExpandable = '﯀'
+let g:NERDTreeDirArrowCollapsible = '﮾'
+"let g:NERDTreeDirArrowExpandable = '⇢'
+"let g:NERDTreeDirArrowCollapsible = '⇣'
 let NERDTreeIgnore = ['\.pyc$']
 
 """"""""""""""""""""""
@@ -126,7 +146,6 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__,node_modules,bower_compon
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|tox)$'
 let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
 let g:ctrlp_use_caching = 0
-
 
 """""""""""""""""""""
 """""""""""""""""""""

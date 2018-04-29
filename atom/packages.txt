@@ -1,0 +1,8 @@
+pristine-ui
+duotone-nature-syntax
+vim-mode-plus
+ex-mode
+language-babel
+linter
+linter-eslint
+file-icons

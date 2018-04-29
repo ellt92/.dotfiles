@@ -2,6 +2,7 @@ pristine-ui
 duotone-nature-syntax
 vim-mode-plus
 ex-mode
+relative-numbers
 language-babel
 linter
 linter-eslint

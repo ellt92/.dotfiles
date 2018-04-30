@@ -7,3 +7,4 @@ language-babel
 linter
 linter-eslint
 file-icons
+atom-beautify

@@ -1,2 +1,5 @@
 *.sw?
 .DS_Store
+tags
+.tern-project
+node_modules

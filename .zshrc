@@ -14,6 +14,7 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home
 
 # Paths #
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ethompson/.nvm/versions/node/v8.0.0/bin"
+export PYTHONPATH=$PYTHONPATH:/Library/Python/2.7/site-packages
 
 # Themeing #
 ZSH_THEME="materialshell"

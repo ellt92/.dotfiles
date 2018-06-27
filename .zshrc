@@ -6,11 +6,16 @@ alias myserver="ssh root@178.62.126.227"
 alias tmux="TERM=screen-256color-bce tmux"
 alias gbd="git branch -D"
 alias vim="nvim"
+alias ys="yarn start"
+alias yt="yarn test"
+alias yj="yarn jest"
+alias yl="yarn lint"
+alias yb="yarn build"
 
 # Exports #
-export ANDROID_HOME=/usr/local/opt/android-sdk
+export ANDROID_HOME=~/Library/Android/sdk
 export GRADLE_HOME=/usr/local/opt/gradle-2.12
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home
 
 # Paths #
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ethompson/.nvm/versions/node/v8.0.0/bin"
@@ -26,7 +31,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Z - Jump around #
- . ~/z/z.sh
+ . /usr/local/etc/profile.d/z.sh
 
 #
 # Load virtualenvwrapper #
@@ -41,5 +46,4 @@ if [ $? -eq 0 ]; then
 
 # Load NVM #
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+. "/usr/local/opt/nvm/nvm.sh"
